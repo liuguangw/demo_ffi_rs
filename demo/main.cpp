@@ -9,27 +9,23 @@ int main(int argc, char **argv)
     uint32_t right = 80;
     cout << left << " + " << right << " = " << add(left, right) << endl;
     //
-    const char *filename;
+    const char *filename = "../Cargo.toml";
     if (argc > 1)
     {
         filename = argv[1];
     }
-    else
-    {
-        //如果没有传入参数
-        filename = "../Cargo.toml";
-    }
     //
-    void *file_ptr = nullptr;
-    if (open_file(filename, &file_ptr) != 0)
+    void *item_ptr = nullptr;
+    if (open_file(filename, &item_ptr) != 0)
     {
         //打开文件失败
-        char *error_message = (char *)file_ptr;
+        char *error_message = (char *)item_ptr;
         cout << "open " << filename << " failed: " << error_message << endl;
         //释放由rust分配的字符串内存
         free_string(error_message);
         return -1;
     }
+    DemoFile *file_ptr = (DemoFile *)item_ptr;
     char *file_content = nullptr;
     int ret = read_file_as_string(file_ptr, &file_content);
     if (ret != 0)
