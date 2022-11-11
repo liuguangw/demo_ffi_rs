@@ -21,8 +21,11 @@ extern "C"
     //释放字符串资源
     void free_string(char *string_ptr);
 
+    //创建Foo对象
     Foo *foo_new1();
+    //创建Foo对象
     Foo *foo_new2();
+    //释放Foo对象
     void foo_delete(Foo *f);
 }
 #endif

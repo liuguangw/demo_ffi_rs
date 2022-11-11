@@ -1,6 +1,7 @@
 mod files;
 mod foo;
 pub use files::{free_file, free_string, open_file, read_file_as_string};
+pub use foo::{foo_delete, foo_new1, foo_new2, Foo};
 
 ///简单的加法
 #[no_mangle]
