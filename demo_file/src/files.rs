@@ -65,7 +65,7 @@ pub unsafe extern "C" fn read_file_as_string(
 /// # Safety
 /// 释放由rust分配的内存
 #[no_mangle]
-pub unsafe extern "C" fn free_file(file: Option<Box<File>>) {
+pub extern "C" fn free_file(file: Option<Box<File>>) {
     println!("> call free_file:");
     dbg!(file);
 }

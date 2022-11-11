@@ -16,10 +16,10 @@ extern "C"
     int read_file_as_string(const DemoFile *file_ptr, char **item_ptr);
 
     //释放文件资源
-    int free_file(DemoFile *file_ptr);
+    void free_file(DemoFile *file_ptr);
 
     //释放字符串资源
-    int free_string(char *string_ptr);
+    void free_string(char *string_ptr);
 
     Foo *foo_new1();
     Foo *foo_new2();
