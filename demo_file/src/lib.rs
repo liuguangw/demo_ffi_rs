@@ -1,4 +1,5 @@
 mod files;
+mod foo;
 pub use files::{free_file, free_string, open_file, read_file_as_string};
 
 ///简单的加法

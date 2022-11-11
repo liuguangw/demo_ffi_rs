@@ -43,5 +43,12 @@ int main(int argc, char **argv)
     free_string(file_content);
     //释放由rust分配的File对象内存
     free_file(file_ptr);
+    // foo
+    Foo *foo1 = foo_new1();
+    Foo *foo2 = foo_new2();
+    Foo *foo3 = nullptr;
+    foo_delete(foo1);
+    foo_delete(foo2);
+    foo_delete(foo3);
     return ret;
 }

@@ -2,6 +2,7 @@
 #define _LIB_DEMO_FILE_H_2022_11_11
 #include <cstdint>
 struct DemoFile;
+struct Foo;
 
 extern "C"
 {
@@ -19,5 +20,9 @@ extern "C"
 
     //释放字符串资源
     int free_string(char *string_ptr);
+
+    Foo *foo_new1();
+    Foo *foo_new2();
+    void foo_delete(Foo *f);
 }
 #endif
