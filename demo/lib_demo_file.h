@@ -1,0 +1,22 @@
+#ifndef _LIB_DEMO_FILE_H_2022_11_11
+#define _LIB_DEMO_FILE_H_2022_11_11
+#include <cstdint>
+
+extern "C"
+{
+    //简单的加法
+    uint32_t add(uint32_t left, uint32_t right);
+
+    //打开文件
+    int open_file(const char *filename, void **item_ptr);
+
+    //读取文件内容
+    int read_file_as_string(const void *file_ptr, char **item_ptr);
+
+    //释放文件资源
+    int free_file(void *file_ptr);
+
+    //释放字符串资源
+    int free_string(char* string_ptr);
+}
+#endif
